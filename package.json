@@ -1,6 +1,6 @@
 {
   "name": "easy-update-mst",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Update utilities for mobx state tree",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
