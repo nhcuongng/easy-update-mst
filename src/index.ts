@@ -19,9 +19,9 @@ export const ActionReset = <T>(self: T) => ({
     localStorage.setItem("dataRoot", JSON.stringify(getSnapshot(self)));
   },
   /**
-   * Reset lai gia tri luu trong store
-   * @param parent ten store
-   * @param ignores cac key se khong bi reset trong store
+   * Reset to initial data
+   * @param parent store name
+   * @param ignores keys will not be reset in store
    * @example
    * ```ts
    *  reset("userList", ["dev"])

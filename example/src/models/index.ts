@@ -1,9 +1,6 @@
 import { types, Instance } from "mobx-state-tree";
 import { ActionUpdate } from 'easy-update-mst';
 
-/**
- * Model chi tiet hon ve cac thuoc tinh cua nguoi binh thuong
- */
 export const UserModel = types.model("User Model", {
   id: types.identifier,
   name: types.string,

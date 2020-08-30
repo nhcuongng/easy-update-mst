@@ -10,7 +10,11 @@ const RootModel = types
   })
   .actions(ActionReset);
 
+/**
+ * ```rootStore``` has data from all stores
+ */
 export const rootStore = RootModel.create(
+  // Create your store with initial data
   {
     userStore: {
       users,
@@ -25,9 +29,7 @@ const RootStoreContext = createContext<null | RootInstance>(null);
 export const Provider = RootStoreContext.Provider;
 
 /**
- * useMst se tra ve store
- *
- * Chi dung trong function component
+ * ```useMst``` return your root store
  */
 export function useMst() {
   const store = useContext(RootStoreContext);

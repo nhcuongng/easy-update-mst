@@ -1,6 +1,6 @@
 {
   "name": "easy-update-mst",
-  "version": "0.0.7",
+  "version": "0.1.0",
   "description": "Update utilities for mobx state tree",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
@@ -18,7 +18,9 @@
     "dist"
   ],
   "keywords": [
-    "mobx-state-tree"
+    "mobx-state-tree",
+    "mobx",
+    "easy update state in mobx state tree"
   ],
   "author": "Cuong Nguyen Huu",
   "license": "ISC",
