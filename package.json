@@ -1,0 +1,58 @@
+{
+  "name": "easy-update-mst",
+  "version": "1.1.0",
+  "description": "Update utilities for mobx state tree",
+  "main": "src/index.js",
+  "scripts": {
+    "build:commonjs": "babel src --out-dir lib",
+    "main": "lib/index.js",
+    "build:umd": "cross-env FILE_NAME=index webpack",
+    "build:umd:min": "cross-env NODE_ENV=production npm run build:umd",
+    "clean": "rimraf lib dist",
+    "build": "npm run clean && npm run build:commonjs && npm run build:umd && npm run build:umd:min",
+    "lint": "eslint \"**/*.{ts,tsx}\" --ignore-pattern node_modules/",
+    "test": "jest",
+    "coverage": "npm test -- --coverage",
+    "posttest": "npm run lint",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "mobx-state-tree"
+  ],
+  "author": "Cuong Nguyen Huu",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nhcuongng/easy-update-mst.git"
+  },
+  "bugs": {
+    "url": "https://github.com/nhcuongng/easy-update-mst/issues"
+  },
+  "homepage": "https://github.com/nhcuongng/easy-update-mst#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.10.5",
+    "@babel/core": "^7.11.4",
+    "@babel/preset-env": "^7.11.0",
+    "@babel/preset-typescript": "^7.10.4",
+    "babel-eslint": "^10.1.0",
+    "babel-jest": "^26.3.0",
+    "babel-loader": "^8.1.0",
+    "coveralls": "^3.1.0",
+    "cross-env": "^7.0.2",
+    "eslint": "^7.7.0",
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-react": "^7.20.6",
+    "jest": "^26.4.2",
+    "source-map-loader": "^1.1.0",
+    "typescript": "^4.0.2",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12"
+  },
+  "dependencies": {
+    "@types/jest": "^26.0.10",
+    "mobx": "^5.15.6",
+    "mobx-state-tree": "^3.17.2"
+  }
+}
