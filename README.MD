@@ -43,7 +43,13 @@ export const UserModel = types.model("User Model", {
     code: types.optional(types.string, 'Javascript'),
     exp: types.optional(types.number, 1.5),
   })
-}).actions(ActionUpdate);
+})
+  .actions(() => ({
+    doSomething() {
+      // another action
+    }
+  }))
+  .actions(ActionUpdate); // inject action update to model
 ```
 
 Now in your component you can use function ```setMobxState``` and ```setMobxDeepState``` to change state.
