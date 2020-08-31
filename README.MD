@@ -1,6 +1,11 @@
 # Easy Update State On Mobx State Tree
 
-*For anyone, who use Mobx and mobx state tree.*
+[![npm version](https://badge.fury.io/js/easy-update-mst.svg)](https://badge.fury.io/js/easy-update-mst)
+![npm](https://img.shields.io/npm/dw/easy-update-mst?style=flat-square)
+![npm bundle size](https://img.shields.io/bundlephobia/min/easy-update-mst?style=flat-square)
+![David (path)](https://img.shields.io/david/nhcuongng/easy-update-mst?style=flat-square)
+
+*For anyone, who use Mobx and Mobx state tree.*
 
 ## Why you should use this package?
 
@@ -28,6 +33,12 @@ if you have **n** properties, you must write **n** functions to change them (lik
 
 My package is solution. With my package, we can be "lazy", avoid writing so many functions.
 
+## Install
+
+```yarn add mobx mobx-state-tree easy-update-mst```
+
+*My package require mobx and mobx state tree*
+
 ## Usage/Examples
 
 In your model
@@ -44,12 +55,13 @@ export const UserModel = types.model("User Model", {
     exp: types.optional(types.number, 1.5),
   })
 })
+  // another action
   .actions(() => ({
     doSomething() {
-      // another action
     }
   }))
-  .actions(ActionUpdate); // inject action update to model
+  // inject action update to model
+  .actions(ActionUpdate);
 ```
 
 Now in your component you can use function ```setMobxState``` and ```setMobxDeepState``` to change state.

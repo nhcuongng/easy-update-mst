@@ -1,4 +1,4 @@
-import { getSnapshot, SnapshotIn, applySnapshot } from "mobx-state-tree";
+ import { SnapshotIn } from "mobx-state-tree";
 
 /**
  * use for reset store, use in root model
@@ -16,7 +16,7 @@ import { getSnapshot, SnapshotIn, applySnapshot } from "mobx-state-tree";
  */
 export const ActionReset = <T>(self: T) => ({
   afterCreate() {
-    localStorage.setItem("dataRoot", JSON.stringify(getSnapshot(self)));
+    localStorage.setItem("dataRoot", JSON.stringify(self));
   },
   /**
    * Reset to initial data
@@ -59,11 +59,6 @@ export const ActionReset = <T>(self: T) => ({
  * @param self
  */
 export const ActionUpdate = <T>(self: T) => ({
-  updateByDung: (
-    data: Partial<{ [key in keyof typeof self]: typeof self[key] }>
-  ) => {
-    Object.assign(self, data);
-  },
   /**
    * Update state for store (```shallow``` update)
    * @param state new state
@@ -78,7 +73,7 @@ export const ActionUpdate = <T>(self: T) => ({
   setMobxState<K extends keyof T>(
     state: Pick<SnapshotIn<T>, K> | SnapshotIn<T> | null
   ) {
-    applySnapshot(self, { ...self, ...state });
+    Object.assign(self, { ...self, ...state });
   },
   /**
    * Update state fro store (```Deep``` update)

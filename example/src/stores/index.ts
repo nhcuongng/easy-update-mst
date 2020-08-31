@@ -2,7 +2,7 @@ import { createContext, useContext } from "react";
 import { types, Instance } from "mobx-state-tree";
 import { Users } from '../models';
 import { users } from "../../data";
-import { ActionReset } from "easy-update-mst";
+import { ActionReset } from 'easy-update-mst';
 
 const RootModel = types
   .model({
